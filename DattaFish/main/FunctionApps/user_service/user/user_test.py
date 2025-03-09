@@ -1,7 +1,7 @@
 import unittest
 import user
 
-conn_str = "mongodb://localhost:27017/"
+conn_str = None
 
 class TestUserMethods(unittest.TestCase):
 

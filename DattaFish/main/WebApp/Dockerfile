@@ -45,7 +45,7 @@ RUN --mount=type=cache,target=/root/.cache/pip \
 COPY . .
 
 # Expose the port that the application listens on.
-EXPOSE 80
+EXPOSE None
 
 # Run the application.
-CMD flask run --port=80 --host=0.0.0.0
+CMD None

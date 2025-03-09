@@ -2,8 +2,8 @@ from flask_login import UserMixin
 import json
 import requests
 
-user_url = 'https://dattafish-user-service.azurewebsites.net/api/user/'
-func_key = 'LVCoAgNAc-rTT87yyDtTfawf9BCC_8Kort7nAVYi5XETAzFuudKeRg=='
+user_url = None
+func_key = None
 
 class User(UserMixin):
    

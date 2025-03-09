@@ -12,8 +12,8 @@ services:
     build:
       context: .
     ports:
-      - 80:80
-    image: dattafishregistry0.azurecr.io/dattafish
+      - None
+    image: None
     platform: linux/amd64
 
 

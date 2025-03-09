@@ -1,7 +1,7 @@
 import unittest
 import catch
 
-conn_str = "mongodb://localhost:27017/"
+conn_str = None
 
 # species: str, weight: float, location: str, lure: str, time: str
 

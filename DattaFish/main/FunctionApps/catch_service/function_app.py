@@ -4,8 +4,7 @@ from bson import json_util
 from catch import catch
 
 
-conn_str = 'mongodb+srv://geoffreykeegan67:LEQVSkazlnLRU3Gy@cluster0.t3m0z.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0'
-# conn_str = "mongodb://localhost:27017/"
+conn_str = None
 catch.connect(conn_str)
 app = func.FunctionApp()
 

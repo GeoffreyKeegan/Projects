@@ -3,11 +3,8 @@ import json
 import requests
 
 
-catch_url = 'https://dattafish-catch-service.azurewebsites.net/api/catch/'
-func_key = 'CnC9VPfQWh4bQrJ-oArTno4JJY7gFRKMBjWGSSaFaUCxAzFudHf2VQ=='
-
-# catch_url = 'http://localhost:7071/api/catch/'
-# func_key = ""
+catch_url = None
+func_key = None
 
 points = 0
 

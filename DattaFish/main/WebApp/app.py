@@ -7,14 +7,14 @@ from user import User
 import json
 import requests
 
-user_url = 'https://dattafish-user-service.azurewebsites.net/api/user/'
-user_func_key = 'LVCoAgNAc-rTT87yyDtTfawf9BCC_8Kort7nAVYi5XETAzFuudKeRg=='
+user_url = None
+user_func_key = None
 
-catch_url = 'https://dattafish-catch-service.azurewebsites.net/api/catch/'
-catch_func_key = 'CnC9VPfQWh4bQrJ-oArTno4JJY7gFRKMBjWGSSaFaUCxAzFudHf2VQ=='
+catch_url = None
+catch_func_key = None
 
 app = Flask(__name__)
-app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+app.secret_key = None
 
 
 
