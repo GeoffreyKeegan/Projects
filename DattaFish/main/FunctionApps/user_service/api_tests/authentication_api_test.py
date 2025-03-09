@@ -3,8 +3,8 @@ import json
 import requests
 
 
-# user_url = None
-# func_key = None
+user_url = None
+func_key = None
 
 
 class TestUserMethods(unittest.TestCase):
