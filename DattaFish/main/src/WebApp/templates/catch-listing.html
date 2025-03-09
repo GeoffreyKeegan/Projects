@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datta Fish</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+</head>
+
+<body>
+    {% include 'header.html' %}
+
+    <h1>Catches</h1>
+    <span>{{get_flashed_messages()[0]}}</span>
+
+    <a href='/{{current_user.id}}/catches/create'><button class="sml">Create Catch</button></a> <br> <br> <br>
+
+    {% for catch in catches %}
+        <a class="catch" href='/{{current_user.id}}/catches/{{catch._id.get("$oid")}}'>{{catch.time}} | {{catch.species}} | {{catch.weight}} | {{catch.location}}</a> <br> <br> <br>
+    {% endfor %}
+
+</body>
+</html>

@@ -1,0 +1,7 @@
+{% include 'header.html' %}
+<h1>Catches</h1>
+<a href='/{{current_user.id}}/catches/create'>add catch</a> <br> <br>
+
+{% for catch in user.catches %}
+    <a href='/{{current_user.id}}/catches/{{catch}}'>{{catch}}</a> <br>
+{% endfor %}

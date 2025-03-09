@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datta Fish</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+</head>
+
+<body>
+    {% include 'header.html' %}
+
+    <h1>Most/Best {{q1}} for {{q2[0]}} ({{q2[1]}}):</h1>
+
+    <a href='/{{current_user.id}}/catches/data'><button class="sml2">Track New Data</button></a>
+
+    <span>{{get_flashed_messages()[0]}}</span>
+
+    {% if q1 == "weight" %}
+        {% for d in data %}
+            {% set catch = d[1] %}
+            <h3>{{d[0]}} lbs: <h3> 
+            <br> 
+            <a class="catch" href='/{{current_user.id}}/catches/{{catch._id.get("$oid")}}'>{{catch.time}} | {{catch.species}} | {{catch.weight}} | {{catch.location}}</a> <br> <br> <br>
+        {% endfor %}
+  
+    {% else %}
+        {% for d in data %}
+            <h2>{{d[1]}}:</h2>
+            <br>
+            {% for catch in d[0] %}
+                <a class="catch" href='/{{current_user.id}}/catches/{{catch._id.get("$oid")}}'>{{catch.time}} | {{catch.species}} | {{catch.weight}} | {{catch.location}}</a> <br> <br> <br>
+            {% endfor %}
+            <br>
+        {% endfor %}
+    {% endif %}
+
+</body>
+</html>
+

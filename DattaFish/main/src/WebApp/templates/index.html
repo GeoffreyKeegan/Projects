@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datta Fish</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+</head>
+
+<body>
+
+    {% include 'header.html' %}
+
+    {% if current_user and current_user.is_authenticated %}
+
+        <p class="name">Welcome {{current_user.username}}!</p>
+
+            <h2>How to Use Datta Fish:</h2>
+
+            <h3>Catches</h3>
+                    <div class="container">
+                        <div class="content">
+                            <p class="desc">
+                                Datta Fish allows users to easily input, store and view catches. 
+                                In order to access these features, simply click on the "Catches" button at the top of any page or click on <a href='/{{current_user.id}}/catches'>this link</a>.
+                            </p>
+
+                            <p class="desc">
+                                Here you can see the button "Create Catch" and a listing of all your logged catches.  
+                            </p>
+
+                            <p class="desc">
+                                If you want to create a catch, click the button labled "Create Catch", enter all information, and click submit.
+                                You will then be shown a detailed view of your catch.
+                            </p>
+                        </div>
+                        <img class="img1" src="static/catches.png" alt="catches">
+                    </div>
+
+                    <p class="desc">
+                        On "Catches" main page, you can access a detailed view of any of your catches by clicking on one. The detailed view
+                        will show you all information you entered about that catch and allows you to edit and delete the catch.
+                    </p>
+
+                <br>
+
+                <h3>Data Track</h3>
+
+                <div class="container">
+                    <img class="img2" src="static/data_track.png" alt="data_track">
+                    <div class="content">
+                        <p class="desc">
+                            Datta Fish also allows users to view all logged catches as an organized and sorted listing.
+                            This allows you to view trends in your catches such as the highest weight by location or the best lure for
+                            a species of fish. In order to access these features, simply click on the "Data Track" button at the top of any page or 
+                            click on <a href='/{{current_user.id}}/catches/data'>this link</a>. <br>
+                        </p>
+                    </div>
+                </div>
+
+                <div class="container"> 
+                    <img class="img2" src="static/data_listing.png" alt="data_listing">
+                    <div class="content">
+                        <p class="desc">
+                            In this example on the left, we start at the Data Track page. We then set the first query to "Species", the second query to "Location" and the name of the second query is 
+                            set to "Blue Pond". When clicking the submit button, the species caught in Blue Pond are shown from most common to least common. 
+                            Under each species is the logged catches that meet both of the entered criteria. You can click on any of these catches to be show a 
+                            detailed view of that catch. If you want enter different data track queries, you can click on the "New Query" button.
+                        </p>
+                        <p class="desc">
+                            Tip: Setting 2 queries to the same thing, such as "Species", and entering the name of that query, such as "Largemouth Bass", will return only catches with that 
+                            specific criteria, in this case all Largemouth Bass catches.
+                        </p>
+                    </div>
+                </div>
+
+
+    {% else %}
+        <h1>Welcome to Datta Fish!</h1>
+            <p>Create an account and login to access all features!</p>
+    {% endif %}
+    
+</body>
+</html>

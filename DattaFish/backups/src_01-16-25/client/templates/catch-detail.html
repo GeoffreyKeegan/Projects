@@ -1,0 +1,24 @@
+{% include 'header.html' %}
+
+<h1>{{catch._id['$oid']}}</h1>
+<p>
+    <b>species:</b>  {{ catch.species }}<br>
+    <b>weight:</b>  {{ catch.weight }}<br>
+    <b>location:</b>  {{ catch.location }}<br>
+    <b>lure:</b>  {{ catch.lure }}<br>
+    <b>time:</b>  {{ catch.time }}<br>
+</p>
+
+<hr>
+
+<b>Delete Catch</b>
+<form action='/{{user._id.get("$oid")}}/catches/{{catch._id.get("$oid")}}/delete' method="POST">
+
+    input catch ID to confirm delete: <input name="catch_id"/><br/>
+    <input type='submit' value="submit">
+
+</form>
+
+<br>
+
+<a href='/{{user._id.get("$oid")}}/catches/{{catch._id.get("$oid")}}/edit'><b>Edit Catch</b></a>

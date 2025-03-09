@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datta Fish</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+</head>
+
+<body>
+
+    {% include 'header.html' %}
+
+    <h1>Data Track</h1>
+
+    <form method="post">
+        Best <select name="q1">
+                <option value="species">Species</option>
+                <option value="location">Location</option>
+                <option value="weight">Weight</option>
+                <option value="lure">Lure</option>
+            </select>
+        for  <select name="q2_name">
+                <option value="species">Species</option>
+                <option value="location">Location</option>
+                <option value="weight">Weight</option>
+                <option value="lure">Lure</option>
+            </select>
+        name:<input name="q2_value"/><br/>
+        <input class="sml" type='submit' value="submit">
+    </form>
+    <span>{{get_flashed_messages()[0]}}</span>
+    
+</body>
+</html>

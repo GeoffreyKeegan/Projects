@@ -1,0 +1,35 @@
+{% include 'header.html' %}
+
+<h1>Account</h1>
+<p>
+    <b>password:</b>  {{ user.password }}<br>
+    <b>id:</b>  {{ user._id['$oid'] }}<br>
+</p>
+
+<form action='/logout'>
+    logout: <input type='submit' value="submit">
+</form>
+
+<br>
+<h3> Update Password </h3>
+
+<form method="POST">
+    old password: <input name="old_password"/><br/>
+    new password: <input type='password' name="new_password0"/><br/>
+    retyped new password: <input type='password' name="new_password1"/><br/>
+    <input type='submit' value="submit">
+
+</form>
+
+<br>
+<h3> Delete Account </h3>
+
+<form action='{{user._id.get("$oid")}}/delete' method="POST">
+
+    input user_id to confirm delete: <input name="user_id"/><br/>
+    <input type='submit' value="submit">
+
+</form>
+
+
+

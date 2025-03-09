@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datta Fish</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+</head>
+
+<body>
+
+    {% include 'header.html' %}
+
+    <h1>Catch Detail</h1>
+        <span>{{get_flashed_messages()[0]}}</span>
+        <h2>Catch Information</h2>
+            <p class="txt">
+                Species:  {{ catch.species }}<br>
+                Weight:  {{ catch.weight }}<br>
+                Location: {{ catch.location }}<br>
+                Lure:  {{ catch.lure }}<br>
+                Time:  {{ catch.time }}<br>
+
+                <a href='/{{user._id.get("$oid")}}/catches/{{catch._id.get("$oid")}}/edit'><button>Edit Catch</button></a>
+            </p>
+
+
+
+
+        <h2>Delete Catch</h2>
+
+        <form action='/{{user._id.get("$oid")}}/catches/{{catch._id.get("$oid")}}/delete' method="POST">
+
+            Enter Password to Confirm Delete: <input name="password" type="password"/><br/>
+            <input class="sml" type='submit' value="submit">
+
+        </form>
+
+</body>
+</html>

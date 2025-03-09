@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datta Fish</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+</head>
+
+
+<body>  
+    {% include 'header.html' %}
+
+    <h1>Create Catch</h1>
+
+        <form method="post">
+            Species: <input name="species"/><br/>
+            Weight (lbs): <input name="weight"/><br/>
+            Location: <input name="location"/><br/>
+            Lure: <input name="lure"/><br/>
+            Date: <input name="time"/><br/>
+            <input class="sml" type='submit' value="submit">
+        </form>
+
+        <span>{{get_flashed_messages()[0]}}</span>
+
+</body>
+</html>

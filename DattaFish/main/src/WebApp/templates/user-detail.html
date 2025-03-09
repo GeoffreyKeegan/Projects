@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datta Fish</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesheet.css')}}">
+</head>
+
+<body>
+
+    {% include 'header.html' %}
+
+    <h1>Account</h1>
+    
+    <span>{{get_flashed_messages()[0]}}</span>
+    
+    <h2> Update Password </h2>
+
+    <form method="POST">
+        Enter Old Password: <input name="old_password"/><br/>
+        Enter New Password: <input type='password' name="new_password0"/><br/>
+        Retype New Password: <input type='password' name="new_password1"/><br/>
+        <input class="sml" type='submit' value="submit">
+
+    </form>
+
+    <h2> Delete Account </h2>
+
+    <form action='{{user._id.get("$oid")}}/delete' method="POST">
+
+        Input Password to Confirm Delete: <input name="password" type="password"/><br/>
+        <input class="sml" type='submit' value="submit">
+
+    </form>
+
+</body>
+</html>
+
+
+
