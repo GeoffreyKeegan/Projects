@@ -3,8 +3,8 @@ import json
 import requests
 
 
-catch_url = None
-func_key = None
+# catch_url = None
+# func_key = None
 
 points = 0
 

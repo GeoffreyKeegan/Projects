@@ -7,11 +7,11 @@ from user import User
 import json
 import requests
 
-user_url = None
-user_func_key = None
+# user_url = None
+# user_func_key = None
 
-catch_url = None
-catch_func_key = None
+# catch_url = None
+# catch_func_key = None
 
 app = Flask(__name__)
 app.secret_key = None

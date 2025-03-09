@@ -2,8 +2,8 @@ from flask_login import UserMixin
 import json
 import requests
 
-user_url = None
-func_key = None
+# user_url = None
+# func_key = None
 
 class User(UserMixin):
    
